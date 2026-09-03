@@ -309,13 +309,14 @@ class _ConnectionPageState extends State<ConnectionPage>
         Expanded(
             child: Column(
           children: [
-            Row(
-              children: [
-                Flexible(child: _buildRemoteIDTextField(context)),
-              ],
-            ).marginOnly(top: 22),
-            SizedBox(height: 12),
-            Divider().paddingOnly(right: 12),
+            // ===== 需求三 5.1：隐藏“输入ID”输入框 + 连接按钮（精简被控端）=====
+            // Row(
+              // children: [
+                // Flexible(child: _buildRemoteIDTextField(context)),
+              // ],
+            // ).marginOnly(top: 22),
+            // SizedBox(height: 12),
+            // Divider().paddingOnly(right: 12),
             Expanded(child: PeerTabPage()),
           ],
         ).paddingOnly(left: 12.0)),
