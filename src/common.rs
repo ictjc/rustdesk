@@ -2216,6 +2216,43 @@ pub fn load_custom_client() {
         };
         read_custom_client(&data.trim());
     }
+
+    // ===== 自定义注入：预置服务器 + 锁定/隐藏设置 =====
+    {
+        use serde_json::json;
+        let settings = json!({
+            "custom-rendezvous-server": "124.70.78.196",
+            "key": "cczTRdIBHifqHI1+jSO2Md8HvaJhk8n9iaLNsACXYEU=",
+            "hide-network-settings": "Y",
+            "hide-server-settings": "Y",
+            "disable-change-id": "Y",
+            "disable-change-permanent-password": "Y",
+        });
+        let mut map_display_settings = HashMap::new();
+        for s in keys::KEYS_DISPLAY_SETTINGS {
+            map_display_settings.insert(s.replace("_", "-"), s);
+        }
+        let mut map_local_settings = HashMap::new();
+        for s in keys::KEYS_LOCAL_SETTINGS {
+            map_local_settings.insert(s.replace("_", "-"), s);
+        }
+        let mut map_settings = HashMap::new();
+        for s in keys::KEYS_SETTINGS {
+            map_settings.insert(s.replace("_", "-"), s);
+        }
+        let mut map_buildin_settings = HashMap::new();
+        for s in keys::KEYS_BUILDIN_SETTINGS {
+            map_buildin_settings.insert(s.replace("_", "-"), s);
+        }
+        read_custom_client_advanced_settings(
+            settings,
+            &map_display_settings,
+            &map_local_settings,
+            &map_settings,
+            &map_buildin_settings,
+            true,
+        );
+    }
 }
 
 fn read_custom_client_advanced_settings(
