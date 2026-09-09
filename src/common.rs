@@ -2223,7 +2223,7 @@ pub fn load_custom_client() {
         let settings = json!({
             "custom-rendezvous-server": "124.70.78.196",
             "key": "cczTRdIBHifqHI1+jSO2Md8HvaJhk8n9iaLNsACXYEU=",
-            "incoming-only": "Y",
+            "conn-type": "incoming",
             "hide-network-settings": "Y",
             "hide-server-settings": "Y",
             "disable-change-id": "Y",
