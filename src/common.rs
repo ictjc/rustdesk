@@ -2221,8 +2221,8 @@ pub fn load_custom_client() {
     {
         use serde_json::json;
         let settings = json!({
-            "custom-rendezvous-server": "124.70.78.196",
-            "key": "cczTRdIBHifqHI1+jSO2Md8HvaJhk8n9iaLNsACXYEU=",
+            "custom-rendezvous-server": "10.16.1.2",
+            "key": "5+OVVXCfj7lxsBDQlJTTZIm8h9jNwyS9C6Pv2Y5R6uM=",
             "conn-type": "incoming",
             "hide-network-settings": "Y",
             "hide-server-settings": "Y",
